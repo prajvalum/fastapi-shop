@@ -1,0 +1,11 @@
+*.pyc
+*.pyo
+.env
+venv/
+.idea/
+.vscode/
+.DS_Store
+docker-compose.override.yml
+instance/
+*.sqlite3
+*.log
