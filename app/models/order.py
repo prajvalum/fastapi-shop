@@ -1,6 +1,11 @@
 from pydantic import BaseModel
 from typing import List
-from app.models.product import Product
+from enum import Enum
+
+
+class OrderStatus(str, Enum):
+    PENDING = "pending"
+    COMPLETED = "completed"
 
 class OrderItem(BaseModel):
     product_id: int
@@ -10,4 +15,4 @@ class Order(BaseModel):
     id: int
     products: List[OrderItem]
     total_price: float
-    status: str  # pending, completed
+    status: OrderStatus
